@@ -1,14 +1,8 @@
 import streamlit as st
-from openai import OpenAI
-st.title("ProtonX x ChatGPT")
+st.title("ProtonX Bot")
 link='All slides in here [link](https://protonx.io/courses/63b4e2120c745e00190cb39a)'
 st.markdown(link,unsafe_allow_html=True)
 import time
-
-client = OpenAI(api_key=st.secrets["OPENAI_API_KEY"])
-
-if "openai_model" not in st.session_state:
-    st.session_state["openai_model"] = "gpt-3.5-turbo"
 
 if "messages" not in  st.session_state:
     st.session_state.messages = []
